@@ -1,0 +1,31 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n+no}{SIZE}\PYG{+w}{ }\PYG{k+kd}{EQU}\PYG{+w}{ }\PYG{l+m+mi}{6}
+\PYG{k}{section}\PYG{+w}{ }\PYG{n+nv}{.data}\PYG{+w}{ }
+\PYG{n+nf}{little}\PYG{+w}{ }\PYG{n+nv}{dd}\PYG{+w}{ }\PYG{l+m+mh}{42434445h}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mh}{45454545h}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mh}{4A4B4C4Dh}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mh}{414D4E4Fh}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mh}{46454948h}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mh}{4C474D46h}
+
+\PYG{k}{section}\PYG{+w}{ }\PYG{n+nv}{.bss}
+\PYG{n+nf}{big}\PYG{+w}{ }\PYG{n+nv}{resd}\PYG{+w}{ }\PYG{n+nv}{SIZE}
+\PYG{n+nf}{temp}\PYG{+w}{ }\PYG{n+nv}{resd}\PYG{+w}{ }\PYG{l+m+mi}{1}
+
+\PYG{k}{section}\PYG{+w}{ }\PYG{n+nv}{.start}
+\PYG{k}{global}\PYG{+w}{ }\PYG{n+nv}{\PYGZus{}start}
+\PYG{n+nl}{\PYGZus{}start:}
+\PYG{n+nf}{mov}\PYG{+w}{ }\PYG{n+nb}{ecx}\PYG{p}{,}\PYG{+w}{ }\PYG{n+nv}{SIZE}\PYG{+w}{ }
+\PYG{n+nf}{mov}\PYG{+w}{ }\PYG{n+nb}{eax}\PYG{p}{,}\PYG{+w}{ }\PYG{n+nv}{little}
+\PYG{n+nf}{mov}\PYG{+w}{ }\PYG{n+nb}{esi}\PYG{p}{,}\PYG{+w}{ }\PYG{n+nv}{big}\PYG{+w}{ }
+\PYG{n+nl}{laco1:}\PYG{+w}{ }\PYG{n+nf}{mov}\PYG{+w}{ }\PYG{n+nb}{ebx}\PYG{p}{,}\PYG{+w}{ }\PYG{n+nb}{esi}
+\PYG{n+nf}{\PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}}
+\PYG{n+nl}{laco2:}\PYG{+w}{ }\PYG{n+nf}{mov}\PYG{+w}{ }\PYG{n+nb}{dl}\PYG{p}{,}\PYG{+w}{ }\PYG{p}{[}\PYG{n+nb}{eax}\PYG{p}{]}
+\PYG{n+nf}{mov}\PYG{+w}{ }\PYG{p}{[}\PYG{n+nb}{ebx}\PYG{p}{],}\PYG{+w}{ }\PYG{n+nb}{dl}
+\PYG{n+nf}{dec}\PYG{+w}{ }\PYG{n+nb}{ebx}
+\PYG{n+nf}{inc}\PYG{+w}{ }\PYG{n+nb}{eax}
+\PYG{n+nf}{\PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}}
+\PYG{n+nf}{jae}\PYG{+w}{ }\PYG{n+nv}{laco2}
+\PYG{n+nf}{add}\PYG{+w}{ }\PYG{n+nb}{esi}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{4}
+\PYG{n+nf}{\PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}}
+\PYG{n+nf}{cmp}\PYG{+w}{ }\PYG{n+nb}{ecx}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{0}
+\PYG{n+nf}{\PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}}
+\PYG{n+nl}{done:}\PYG{+w}{ }\PYG{n+nf}{mov}\PYG{+w}{ }\PYG{n+nb}{eax}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{1}
+\PYG{n+nf}{mov}\PYG{+w}{ }\PYG{n+nb}{ebx}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{0}
+\PYG{n+nf}{int}\PYG{+w}{ }\PYG{l+m+mh}{80h}
+\end{Verbatim}
