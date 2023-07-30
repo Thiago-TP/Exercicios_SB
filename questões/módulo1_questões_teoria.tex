@@ -1,0 +1,57 @@
+\begin{enumerate}
+    \item
+    Abaixo estão listadas várias afirmativas incorretas.
+    Justificando, identifique os erros, e corrija-os.
+    \begin{itemize}
+        \item [(a)]
+        O formato .COM caracteriza-se por ter um endereço fixo (100H)
+        para o ponto de entrada do programa.
+        O cabeçalho de um arquivo nesse formato possui tamanho reduzido simplesmente
+        composto pelos caracteres `MZ' e 
+        a quantidade de segmentos de 64 kiB necessários para esse programa.
+
+        \item [(b)]
+        Bootstrap loader é um carregador especial, já que ele consiste em um programa
+        armazenado completamente em um único setor conhecido como MBR.
+
+        \item [(c)]
+        A utilização de bibliotecas dinâmicas permite que um trecho de código 
+        chamado por vários problemas possa ter uma única cópia em memória,
+        e somente carregada ao ser executada: 
+        o montador e o ligador portanto não necessitam serem informados 
+        sobre o uso de uma biblioteca dinâmica.
+
+        \item [(d)]
+        O formato ELF é um formato de exclusivo de arquivos objeto complexo 
+        que armazena tabelas com informações de realocação para o ligador.
+        O formato PE (portable executable) é um formato feito em base no formato ELF.
+    \end{itemize} 
+
+    \item 
+    Abaixo estão listadas várias afirmativas, as quais podem estar erradas.
+    Identifique o(s) erro(s), justifique o por quê, e corrija-o.
+    \begin{itemize}
+        \item [(a)]
+        Executável ligado com biblioteca estática 
+        possui a vantagem de ser mais portável
+        que o executável com biblioteca dinâmica.
+        O programa também é carregado mais rápido em memória.
+        Porém, é possível ter várias cópias da mesma biblioteca em memória.
+        Por esse motivo os formatos de arquivos mais recentes 
+        como ELF e PE não permitem ligação estática.
+
+        \item [(b)]
+        A utilização de bibliotecas dinâmicas com carregador estático 
+        permite que um trecho de código chamado por vários programas 
+        possa ter uma única cópia em memória, e somente carregada ao ser executada.
+        O montador e o ligador portanto não necessitam 
+        serem informados sobre o uso de uma biblioteca dinâmica. 
+    \end{itemize}
+
+    \item
+    Descreva as informações contidas no MBR, indicando suas partes.
+    Indique qual é o objetivo do setor MBR no processo de carregação do Sistema Operacional.
+    Indique onde se encontra o MBR.
+    Descreva por que o MBR foi substituído pelo GPT 
+    em sistemas computacionais modernos.
+\end{enumerate}

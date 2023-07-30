@@ -1,0 +1,53 @@
+\begin{enumerate}
+    \item
+    Os itens abaixo possuem instruções de programas Assembly IA-32 (em modo nativo) 
+    que utilizam diversos modos de endereçamento. 
+    Classifique cada item como correto ou errado, e justifique o que estiver errado.
+    \begin{itemize}
+        \item[(a)] \asm{mov EAX, 10}
+        \item[(b)] \asm{mov [M], AL}
+        \item[(c)] \asm{mov AL, [CS + ESI + array]}
+        \item[(d)] \asm{mov vetor[1], 0}
+        \item[(e)] \asm{add AX, [X + ECX]}
+        \item[(f)] \asm{mov ESI, vetor + EBX}
+        \item[(g)] \asm{inc WORD [inicio + EBX*8 + ESI]}
+        \item[(h)] \asm{mov [EBX + ESI*4], DWORD 5}
+        \item[(i)] \asm{dec BYTE [BL]}
+        \item[(j)] \asm{add [x + 1], AL} 
+        \item[(k)] \asm{mov EAX, [array + ECX*8 + EBX]}
+        \item[(l)] \asm{mov [EAX*8 + 1], 5}
+        \item[(m)] \asm{mov BL, AX}
+        \item[(n)] \asm{cmp [ESI], 10}
+        \item[(o)] \asm{adc AL, AH}
+    \end{itemize}
+
+    \item
+    Descreva as diferenças sobre endereçamento e utilização de meória 
+    do Modo Real e o Modo Protegido. 
+    Para o modo real, indique somente como é calculado o endereço de memória.
+    No modo protegido, 
+    faça um diagrama mostrando os diferentes segmentos de memória,
+    indique como é calculado o endereço lógico e real, 
+    e por que o modo é chamado de protegido.
+
+    \item 
+    Dadas as seguintes instruções e os seus respectivos códigos de máquina,
+    indique os valores dos campos OPCODE, Mod R/M, SIB, DISPLACEMENT, e IMMEDIATE.
+    Note que uma instrução pode deixar de apresentar algum campo.
+    \begin{itemize}
+        \item \asm{MOV edx, 0x0} ba 00 00 00 00
+        \item \asm{MOV EBP, ESP} 89 e5
+    \end{itemize}
+
+    \item
+    Existem três tipos básicos de operandos: imediato, registrador e memória.
+    O acesso a memória pode ser feito de duas maneiras: direta ou indireta.
+    Em cada instrução com algum tipo de endereçamento 
+    do código abaixo especifique que tipo de operando 
+    está sendo usado como fonte e destino:
+    imediato, memória direta/indireta, ou registrador.
+    Indicar se algum endereçamento é ilegal. 
+
+    \putNASM{Código com vários tipos de acesso a memória.}{enderecamentos.asm}{enderecamentos}
+
+\end{enumerate}

@@ -1,0 +1,27 @@
+\begin{enumerate}[resume]
+    \item
+    O programa abaixo realiza a cópia de um vetor de \textit{double words}, 
+    convertendo-o de \textit{little endian} para \textit{big endian}.
+    Complete o programa, indicando as instruções dos espaços em branco 
+    (cada espaço deve ser preenchido com uma única instrução).
+
+    \putNASM{Conversor de \textit{little endian} para \textit{big endian}.}{little_endian.asm}{little_endian}
+
+    \item
+    Para cada código C abaixo, escreva o equivalente em Assembly IA-32.
+    Diretivas em C \textbf{devem} ser substituídas por diretivas equivalentes em IA-32.
+    Use os registradores para as variáveis locais (com exceção de estruturas de dados)
+    e seção de Dados ou BSS para as variáveis estáticas ou globais.
+    \textbf{Deve-se} utilizar os endereçamentos corretos 
+    para cada tipo de estrutura de dados.
+    Não se preocupe pelo fato do programa principal em C ser uma função.
+    \begin{itemize}
+        \item [(a)] \putC{Vetor de 100 inteiros.}{vector_size_100.c}{vector_size_100}
+        \item [(b)] \putC{Matriz indicadora de inteiros iguais.}{matrix_matching.c}{matrix_matching}
+        \item [(c)] \putC{Soma dos elementos de um vetor.}{vector_sum.c}{vector_sum}
+        \item [(d)] Não é permitido \asm{MUL} ou \asm{IMUL}.
+                    \putC{Preenchimento de matriz 100x100.}{100x100_matrix.c}{100x100_martix}
+        \item [(e)] Assuma que o usuário vai digitar um número de 0 a 9.
+                    \putC{Soma com parâmetro na entrada do usuário.}{weird_sum.c}{weird_sum}
+    \end{itemize}
+\end{enumerate}

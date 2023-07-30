@@ -1,6 +1,7 @@
 SIZE EQU 6
 section .data 
-little dd 42434445h, 45454545h, 4A4B4C4Dh, 414D4E4Fh, 46454948h, 4C474D46h
+little dd 42434445h, 45454545h, 4A4B4C4Dh,
+       dd 414D4E4Fh, 46454948h, 4C474D46h
 
 section .bss
 big resd SIZE
