@@ -35,8 +35,8 @@
     indique os valores dos campos OPCODE, Mod R/M, SIB, DISPLACEMENT, e IMMEDIATE.
     Note que uma instrução pode deixar de apresentar algum campo.
     \begin{itemize}
-        \item \asm{MOV edx, 0x0} ba 00 00 00 00
-        \item \asm{MOV EBP, ESP} 89 e5
+        \item [(a)] \asm{MOV edx, 0x0} ba 00 00 00 00
+        \item [(b)] \asm{MOV EBP, ESP} 89 e5
     \end{itemize}
 
     \item
@@ -49,5 +49,65 @@
     Indicar se algum endereçamento é ilegal. 
 
     \putNASM{Código com vários tipos de acesso a memória.}{enderecamentos.asm}{enderecamentos}
+
+    \item
+    Sobre a arquitetura x64, responda:
+    \begin{itemize}
+        \item [(a)]
+        O que significa um processador ser de arquitetura híbrida RISC/CISC?
+
+        \item [(b)]
+        Descreva como é feito o endereçamento de memória na arquitetura x64,
+        indicando os grupos de bits dentro do endereçamento virtual.
+
+        \item [(c)]
+        Explique brevemente o que é a tecnologia SIMD,
+        indicando os registradores envolvidos.
+
+        \item [(d)]
+        Indique as diferenças entre os registradores 
+        de uso geral da arquitetura IA-32 e x64.    
+    \end{itemize}
+
+    \item
+    Uma instrução de pulo (ou salto) pode ser classificada de diversas formas.
+    Responda sucintamente às perguntas abaixo com relação a pulos.
+    \begin{itemize}
+        \item [(a)]
+        O que significa um pulo curto relativo? 
+        Como é calculado o valor no contador de programa 
+        após executar a instrução de pulo?
+
+        \item [(b)]
+        O que significa um pulo distante absoluto indireto?
+        Como é calculado o valor no contador de programa 
+        após executar a instrução de pulo?
+
+        \item [(c)]
+        Quais os tipos de pulos distantes no Protected Mode e Real Mode?
+    \end{itemize}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 \end{enumerate}

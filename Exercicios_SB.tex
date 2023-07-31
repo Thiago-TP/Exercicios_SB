@@ -12,7 +12,7 @@
 % Pacote para desenhos
 \usepackage{tikz} % https://ctan.org/pkg/pgf?lang=en
 \usepackage{multicol}
-
+\usepackage{float}
 % Mudança da estética dos títulos de capítulo, seção, e a subseção
 \usepackage[scaled]{helvet} % https://ctan.org/pkg/helvet?lang=en
 \usepackage{titlesec}       % https://ctan.org/pkg/titlesec?lang=en
@@ -43,13 +43,17 @@
 
 
 % Pacote para inserção de códigos
-\usepackage[newfloat, section]{minted} % https://ctan.org/pkg/minted?lang=en
-% \usemintedstyle{...} % caso queira mudar o esquema de cores, troque ... por uma das opções em "pygmentize -L styles"
+\usepackage[section]{minted} % https://ctan.org/pkg/minted?lang=en
+    \renewcommand{\listingscaption}{Código}
+    \renewcommand{\listoflistingscaption}{Lista de códigos}
+    %\SetupFloatingEnvironment{listing}{placement=htp}
+    %\SetupFloatingEnvironment{listing}{name=Código}
+    %\SetupFloatingEnvironment{listing}{listname=Lista de códigos nas questões e respostas}
+    \usemintedstyle{default} % caso queira mudar o esquema de cores, troque por uma das opções em "pygmentize -L styles"
 
 % Atalho para inserir código NASM x86 no pdf.
 % Uso: \putNASM{legenda}{nome do arquivo}{label para referência}
 % O arquivo deve estar na pasta 'listings'
-\usepackage{float}
 \newcommand{\putNASM}[3]{
     \begin{listing}[H]
         \caption{#1}
@@ -67,6 +71,7 @@
 }
 
 \begin{document}
+\listoflistings
 
 \chapter{Exercícios de Software Básico}
     \section{Módulo 1 -- Compiladores}
