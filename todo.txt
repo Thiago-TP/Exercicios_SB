@@ -1,0 +1,5 @@
+TODO:
+mudar fonte do números das linhas
+usar fancyhdr
+rever nomes dos programas
+mudar esquema de cores

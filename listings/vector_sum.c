@@ -1,5 +1,5 @@
 #define SIZE 11
-int main(void){
+int main() {
     int vetor[SIZE] = {
         0x10002231, 0x80154491, 0x91929394,
         0x11223344, 0x12131415, 0x79270601,
@@ -8,7 +8,7 @@ int main(void){
     };
     int res=0;
     int i=0;
-    while (i<SIZE)
+    while (i < SIZE)
         res += vetor[i++];
     return 0;
 }

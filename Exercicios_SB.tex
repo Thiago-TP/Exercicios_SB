@@ -31,8 +31,9 @@
 % Pacote enumitem permite colocar número da seção na enumeração, e introduz a opção resume.
 % https://tex.stackexchange.com/questions/1126/include-section-number-in-list-number
 % https://tex.stackexchange.com/questions/351638/continue-numbering-of-paragraphs-after-a-new-section
-\usepackage{enumitem}
-    \setlist{noitemsep}
+\usepackage{enumitem} % https://ctan.org/pkg/enumitem?lang=en
+    \setlength{\parindent}{0em}
+    \setlist{noitemsep, leftmargin=0em}
     \setenumerate[1]{label=\thesection.\arabic*.}
     \setenumerate[2]{label*=\arabic*.}
 
@@ -44,34 +45,21 @@
 
 % Pacote para inserção de códigos
 \usepackage[section]{minted} % https://ctan.org/pkg/minted?lang=en
-    \renewcommand{\listingscaption}{Código}
-    \renewcommand{\listoflistingscaption}{Lista de códigos}
-    %\SetupFloatingEnvironment{listing}{placement=htp}
-    %\SetupFloatingEnvironment{listing}{name=Código}
-    %\SetupFloatingEnvironment{listing}{listname=Lista de códigos nas questões e respostas}
+    \definecolor{bg}{rgb}{0.97, 0.97, 0.97}
     \usemintedstyle{default} % caso queira mudar o esquema de cores, troque por uma das opções em "pygmentize -L styles"
 
 % Atalho para inserir código NASM x86 no pdf.
 % Uso: \putNASM{legenda}{nome do arquivo}{label para referência}
 % O arquivo deve estar na pasta 'listings'
-\newcommand{\putNASM}[3]{
-    \begin{listing}[H]
-        \caption{#1}
-        \inputminted[linenos=false, frame=single]{nasm}{listings/#2}
-        \label{#3}
-    \end{listing}
+\newcommand{\putNASM}[1]{
+    \inputminted[numbers=right, numbersep=1pt, bgcolor=bg]{nasm}{listings/#1}
+}
+\newcommand{\putC}[1]{
+    \inputminted[numbers=right, numbersep=1pt, bgcolor=bg]{C}{listings/#1}
 }
 
-\newcommand{\putC}[3]{
-    \begin{listing}[H]
-        \caption{#1}
-        \inputminted[linenos=false, frame=single]{C}{listings/#2}
-        \label{#3}
-    \end{listing}
-}
 
 \begin{document}
-\listoflistings
 
 \chapter{Exercícios de Software Básico}
     \section{Módulo 1 -- Compiladores}

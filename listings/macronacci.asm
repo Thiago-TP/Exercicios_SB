@@ -1,0 +1,29 @@
+SECTION TEXT
+M1: MACRO   &A, &B, &C
+    COPY    &A, &B
+    INPUT   &C
+    OUTPTUT &B
+ENDMACRO
+M2: MACRO   &A, &B, &C
+    OUTPUT  &A
+    COPY    &B, &C
+    COPY    &A, &B
+ENDMACRO
+COPY    ZERO, OLDER
+M1      ONE, OLD, LIMIT
+FRONT:  LOAD    OLDER
+        ADD     OLD
+        STORE   NEW
+        SUB     LIMIT
+        JMPP    FINAL
+        M2      NEW, OLD, OLDER
+        JMP     FRONT
+FINAL:  OUTPUT  LIMIT
+STOP
+SECTION DATA
+ZERO:   CONST 0
+ONE:    CONST 1
+OLDER:  SPACE
+OLD:    SPACE
+LIMIT:  SPACE
+NEW:    SPACE

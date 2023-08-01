@@ -8,15 +8,15 @@ void soma(int M[][N], int *valor) {
         *valor += M[i][i];
 }
 
-int main(void){
+int main() {
     int A[N][N];
     int i, j, res;
     for (i=0; i<N; i++)
-        for(j=0; j<N; j++){
+        for (j=0; j<N; j++) {
             printf("Digite elemento A[%d][%d]: ", i+1, j+1);
             scanf("%d", &A[i][j]);
         }
     soma(A, &res);
-    printf("Soma dos elementos da diagonal principal: %d \n", res);
+    printf("Soma dos elementos da diagonal principal: %d\n", res);
     return 0;
 }

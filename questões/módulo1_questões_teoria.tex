@@ -1,4 +1,53 @@
 \begin{enumerate}
+
+    \item 
+    Responda sucintamente:
+    \begin{itemize}
+        \item [(a)]
+        Qual a diferença mais importante entre uma macro 
+        e uma subrotina (função)?
+
+        \item [(b)]
+        Durante o processo de tradução são necessários dois estágios,
+        Análise e Síntese. Explique brevemente o objetivo de cada estágio
+        e liste as sub-etapas de cada um deles.        
+    \end{itemize}
+
+    \item 
+    Os itens abaixo podem conter erros.
+    Destaque-os, e corrija-os reescrevendo os itens.
+    \begin{itemize}
+        \item [(a)]
+        O bootstrap loader faz parte do Sistema Operacional.
+        Ele é carregado no processo de BOOT.
+        Possui um tamanho sempre múltiplo a 512 bytes 
+        e foi substituído pela GPT para ocupar muito espaço em memória RAM.
+
+        \item [(b)]
+        As bibliotecas dinâmicas com carregador estático 
+        geram um executável chamado de standalone que tem como vantagem
+        ser mais portável que o executável gerado usando 
+        bibliotecas dinâmicas com carregador dinâmico.
+        Porém, o carregador dinâmico é o único que garante que 
+        somente tenha uma única cópia da biblioteca em memória.
+
+        \item [(c)]
+        O formato de arquivos .COM é um formato sem cabeçalho 
+        de no máximo 64 kB que não permite ligação nem debug.
+        É um arquivo tanto para objeto como executável.
+        O formato COFF também é formato de objeto executável,
+        porém ele permite bibliotecas dinâmicas e debug.
+
+        \item [(d)]
+        A principal vantagem de uma linguagem compilada em relação
+        a uma interpretada é a otimização completa do código 
+        sem precisar manter relação de linha de código compilado
+        com o arquivo de texto de entrada com o programa original.
+        Porém, uma outra vantagem é que os programas compilados
+        são mais portáveis, já que o arquivo executável de um programa
+        compilado pode ser executado em qualquer Sistema Operacional.
+    \end{itemize}
+
     \item
     Abaixo estão listadas várias afirmativas incorretas.
     Justificando, identifique os erros, e corrija-os.
@@ -29,7 +78,7 @@
 
     \item 
     Abaixo estão listadas várias afirmativas, as quais podem estar erradas.
-    Identifique o(s) erro(s), justifique o por quê, e corrija-o.
+    Identifique o(s) erro(s), dê o por quê(s), e corrija-o(s).
     \begin{itemize}
         \item [(a)]
         Executável ligado com biblioteca estática 
@@ -54,4 +103,61 @@
     Indique onde se encontra o MBR.
     Descreva por que o MBR foi substituído pelo GPT 
     em sistemas computacionais modernos.
+
+    \item
+    Explique para que serve o código de 3 endereços
+    durante o processo de compilação;
+    se é usado durante a fase de análise ou síntese e;
+    qual a diferença entre a tabela de 3 colunas e a de 4.
+
+    \item
+    Dado o código de três endereços abaixo, 
+    que trabalha com array de bytes em memória,
+    responda:    
+    \putC{3_addresses.c}
+
+    \begin{itemize}
+        \item [(a)]
+        O código foi otimizado? Justifique.
+        
+        \item [(b)]
+        Assumindo que o código inicial era ANSI C, 
+        qual o tipo da variável c2 e
+        qual o tipo da variável c1? Jusifique.         
+    \end{itemize}
+
+    \item
+    Cada um dos seguintes trechos de código em linguagem C 
+    possui um ou mais erros. Indique onde estão os erros 
+    e classifique-os como léxico, sintático ou semântico.
+    \begin{itemize}
+        \item [(a)] \putC{for_ab.c}
+        \item [(b)] \putC{double_xy.c}
+        \item [(c)] \putC{switch_a.c}
+        \item [(d)] \putC{float_abc.c}
+    \end{itemize}
+
+    \item
+    As funções em C abaixo fazem parte do mesmo programa,
+    como um arquivo de cabeçalho (*.h). O arquivo não compila.
+    Indique as linhas erradas, explicitando se o erro é
+    léxico, sintático ou semântico.
+    Assuma que CHAR\_BIT foi definido corretamente.
+    \putC{h_funcs.c}
+
+    \item
+    Detecte os erros no código abaixo, sublinhando o erro
+    e indicando se o erro é sintático, léxico ou semântico.
+    \putC{print_plus_n.c}
+
+    \item
+    No código abaixo identifique os erros
+    e indique se é erro léxico, semântico ou sintático.
+    \putC{mnpq.c}
+
+    \item
+    Indique quais são os erros no código abaixo, classificando-o como
+    léxico, sintático ou semântico.
+    \putC{wrong_array.c}
+
 \end{enumerate}

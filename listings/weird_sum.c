@@ -1,18 +1,15 @@
-char Start;
-int Count;
+char start;
+int count;
 
 int main() {
     char sum=0;
-    Count = 100;
-    scanf("%d", &Start);
-
-    while(Count) {
-        if (sum%2)
-            sum += Start;
-        else
-            sum -= Start;
-        Start++;
-        Count--;
+    count = 100;
+    scanf("%d", &start);
+    while (count) {
+        if (sum%2) sum += start;
+        else sum -= start;
+        start++;
+        count--;
     }
     return sum;
 }

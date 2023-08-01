@@ -1,16 +1,16 @@
 #include <stdio.h>
 #define BUF_SIZE 256
 
-int main(){
+int main() {
     FILE *fd1, *fd2;
     char file_in[30];
     char file_out[30];
     char buf[BUF_SIZE];
 
-    printf("Digite o nome do arquivo de entrada:");
+    printf("Digite o nome do arquivo de entrada: ");
     scanf("%s", file_in);
 
-    printf("Digite o nome do arquivo de saída:");
+    printf("Digite o nome do arquivo de saída: ");
     scanf("%s", file_out);
 
     fd1 = fopen(file_in, "r");

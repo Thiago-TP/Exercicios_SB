@@ -1,10 +1,35 @@
 \begin{enumerate}[resume]
+
+    \item
+    Dado o programa abaixo,    
+    \putNASM{macronacci.asm}
+
+    \begin{itemize}
+        \item [(a)]
+        Mostre como ficaria a MNT e a MDT, 
+        explicando o que são essas tabelas e para que são usadas..
+
+        \item [(b)]
+        Mostre a tabela de símbolos assumindo que foi utilizado
+        o algoritmo de passagem única, escrevendo as listas de pendências.
+        (note que é necessário primeiro resolver as macros).
+    \end{itemize}    
+
+    \item
+    Dado o código abaixo em assembly inventado visto em sala de aula,
+    mostre o arquivo objeto desse programa, chamado PROG1.
+    Coloque T na frente de cada linha da parte de texto,
+    e H na frente de cada linha de todos os headers (caso necessário).
+    Em cada linha de header, indique textualmente o significado do conteúdo.
+    Caso necessário, informação de realocação pode ser dada 
+    utilizando os 2 formatos vistos em aula para arquivos reais.
+    \putNASM{PROG1.asm}
+
     \item
     Considere os módulos a seguir na Linguagem de Montagem Hipotética apresentada em sala.
-    
     \begin{multicols}{2}
-        \putNASM{Código fonte do módulo A.}{modA.asm}{modA}
-        \putNASM{Código fonte do módulo B.}{modB.asm}{modB}
+        \putNASM{modA.asm}
+        \putNASM{modB.asm}
     \end{multicols}
 
     \begin{itemize}
@@ -19,4 +44,100 @@
         escrevendo no cabeçalho antes do código um mapa de bits mediante a diretiva R
         (ex.: R 0101010001). 
     \end{itemize}
+
+    \item 
+    Considere os módulos a seguir na Linguagem de Montagem Hipotética apresentada em sala.
+    \begin{multicols}{3}
+        \putNASM{moda.asm}
+        \putNASM{modb.asm}
+        \putNASM{modc.asm}
+    \end{multicols}
+    \begin{itemize}
+        \item [(a)]
+        Personifique um montador e monte os módulos. 
+        Apresente as tabelas de símbolos, de uso e de definição de cada módulo
+        (não é necessário apresentar o código montado de cada módulo).
+
+        \item [(b)]
+        Personifique um ligador e combine os módulos em um único arquivo executável.
+        Somente é necessário apresentar o código ligado final indicando no código
+        os endereços absolutos e relativos e os fatores de correção.
+        O módulo A deve ir primeiro no código final, seguido de B e finalmente o C.
+    \end{itemize}
+
+    \item
+    Utilizando a linguagem Assembly hipotética vista em sala de aula:
+    \begin{itemize}
+        \item [(a)]
+        Faça um programa que receba um número inteiro (de 16 bits) do usuário
+        e escreva na tela uma sequência de 1s e/ou 0s 
+        sendo a representação binária do número indicado pelo usuário 
+        (do bit menos significativo ao mais significativo).
+
+        \item [(b)]
+        Personifique um montador de passagem única e realize a montagem do programa.
+        Apresente a Tabela de Símbolos resultante e o código máquina,
+        ambos antes de resolver as referências pendentes.
+    \end{itemize}
+    
+    \item
+    Utilizando a linguagem Assembly hipotética vista em sala de aula:
+    \begin{itemize}
+        \item [(a)]
+        Faça um programa em assembly que receba 1 número (positivo) do usuário, 
+        e verifique se é múltiplo de 3:
+        se sim mostrar 1 na tela, caso contrário mostrar 0. 
+        A parte de dados deve ir depois da parte de código.
+        A verificação se o número é múltiplo ou não 
+        deve ser feito utilizando uma macro que recebe como argumento 
+        o endereço de memória onde foi salvo o número digitado pelo usuário. 
+        O que tem de ser feito fora da macro 
+        é a leitura do número e a impressão na tela da saída.
+
+        \item [(b)]
+        Personifique um montador de passagem única e realize a montagem do programa.
+        Apresente a Tabela de Símbolos resultante 
+        e o código máquina antes de resolver as referências pendentes
+        (ou seja mostrar a tabela de símbolos e as listas de pendências).
+        Não precisa apresentar o código montado nesta parte.
+    \end{itemize}
+
+    \item
+    É preciso fazer um programa em Assembly formado por 2 módulos.
+    O programa deve operar da seguinte forma:
+    \begin{enumerate}
+        \item [1.]
+        O primeiro módulo deve pedir ao usuário 2 números.
+        Deve armazenar esses dois dígitos em memória (rótulo)
+        que foi reservada para receber os 2 valores.
+        Ou seja, um só rótulo foi reservado para 2 endereços de memória.
+        Esse rótulo deve ter sido reservado no módulo 2.
+
+        \item [2.]
+        Após receber e salvar os 2 números, o primeiro módulo 
+        deve pular para o segundo módulo.
+
+        \item [3.]
+        O segundo módulo deve verificar se o segundo número é diferente de zero.
+        Se for diferente de zero, deve voltar ao módulo 1.
+
+        \item [4.]
+        O módulo 1 deve então mostrar a divisão do primeiro pelo segundo.
+    \end{enumerate}
+
+    \begin{itemize}
+        \item [(a)]
+        Mostre os 2 módulos utilizando o Assembly inventado visto em sala de aula.
+        Cada módulo sempre deve ter a seção de dados depois da seção de texto.
+        Não é necessário utilizar a diretiva SECTION para dividir as seções,
+        mas é obrigatório o uso de BEGIN e END.
+
+        \item [(b)]
+        Mostre a tabela de símbolos, uso e definições de cada módulo,
+        assim como o fator de correção de cada módulo.
+
+        \item [(c)]
+        Mostre o código objeto após os módulos terem sido ligados.
+    \end{itemize}
+
 \end{enumerate}
