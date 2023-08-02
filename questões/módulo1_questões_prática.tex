@@ -24,61 +24,6 @@
     Caso necessário, informação de realocação pode ser dada 
     utilizando os 2 formatos vistos em aula para arquivos reais.
     \putNASM{PROG1.asm}
-
-    \item
-    Considere os módulos a seguir na Linguagem de Montagem Hipotética apresentada em sala.
-    \begin{multicols}{2}
-        \putNASM{modA.asm}
-        \putNASM{modB.asm}
-    \end{multicols}
-
-    \begin{itemize}
-        \item [(a)]
-        Personifique um montador e monte os módulos como uma sequência de números inteiros,
-        utilizando a tabela em apêndice como referência. 
-        Apresenta o código montado e as tabelas resultantes.
-
-        \item [(b)]
-        Personifique um ligador e combine os módulos em um único arquivo executável.
-        Apresente o código ligado indicando os endereços absolutos e relativos,
-        escrevendo no cabeçalho antes do código um mapa de bits mediante a diretiva R
-        (ex.: R 0101010001). 
-    \end{itemize}
-
-    \item 
-    Considere os módulos a seguir na Linguagem de Montagem Hipotética apresentada em sala.
-    \begin{multicols}{3}
-        \putNASM{moda.asm}
-        \putNASM{modb.asm}
-        \putNASM{modc.asm}
-    \end{multicols}
-    \begin{itemize}
-        \item [(a)]
-        Personifique um montador e monte os módulos. 
-        Apresente as tabelas de símbolos, de uso e de definição de cada módulo
-        (não é necessário apresentar o código montado de cada módulo).
-
-        \item [(b)]
-        Personifique um ligador e combine os módulos em um único arquivo executável.
-        Somente é necessário apresentar o código ligado final indicando no código
-        os endereços absolutos e relativos e os fatores de correção.
-        O módulo A deve ir primeiro no código final, seguido de B e finalmente o C.
-    \end{itemize}
-
-    \item
-    Utilizando a linguagem Assembly hipotética vista em sala de aula:
-    \begin{itemize}
-        \item [(a)]
-        Faça um programa que receba um número inteiro (de 16 bits) do usuário
-        e escreva na tela uma sequência de 1s e/ou 0s 
-        sendo a representação binária do número indicado pelo usuário 
-        (do bit menos significativo ao mais significativo).
-
-        \item [(b)]
-        Personifique um montador de passagem única e realize a montagem do programa.
-        Apresente a Tabela de Símbolos resultante e o código máquina,
-        ambos antes de resolver as referências pendentes.
-    \end{itemize}
     
     \item
     Utilizando a linguagem Assembly hipotética vista em sala de aula:
@@ -100,6 +45,61 @@
         e o código máquina antes de resolver as referências pendentes
         (ou seja mostrar a tabela de símbolos e as listas de pendências).
         Não precisa apresentar o código montado nesta parte.
+    \end{itemize}
+
+    \item
+    Utilizando a linguagem Assembly hipotética vista em sala de aula:
+    \begin{itemize}
+        \item [(a)]
+        Faça um programa que receba um número inteiro (de 16 bits) do usuário
+        e escreva na tela uma sequência de 1s e/ou 0s 
+        sendo a representação binária do número indicado pelo usuário 
+        (do bit menos significativo ao mais significativo).
+
+        \item [(b)]
+        Personifique um montador de passagem única e realize a montagem do programa.
+        Apresente a Tabela de Símbolos resultante e o código máquina,
+        ambos antes de resolver as referências pendentes.
+    \end{itemize}
+
+    \item
+    Considere os módulos a seguir na Linguagem de Montagem Hipotética apresentada em sala.
+    \begin{multicols}{2}
+        \putNASM{modA.asm}\columnbreak
+        \putNASM{modB.asm}
+    \end{multicols}
+
+    \begin{itemize}
+        \item [(a)]
+        Personifique um montador e monte os módulos como uma sequência de números inteiros,
+        utilizando a tabela em apêndice como referência. 
+        Apresenta o código montado e as tabelas resultantes.
+
+        \item [(b)]
+        Personifique um ligador e combine os módulos em um único arquivo executável.
+        Apresente o código ligado indicando os endereços absolutos e relativos,
+        escrevendo no cabeçalho antes do código um mapa de bits mediante a diretiva R
+        (ex.: R 0101010001). 
+    \end{itemize}
+
+    \item 
+    Considere os módulos a seguir na Linguagem de Montagem Hipotética apresentada em sala.
+    \begin{multicols}{3}
+        \putNASM{moda.asm}\columnbreak
+        \putNASM{modb.asm}\columnbreak
+        \putNASM{modc.asm}
+    \end{multicols}
+    \begin{itemize}
+        \item [(a)]
+        Personifique um montador e monte os módulos. 
+        Apresente as tabelas de símbolos, de uso e de definição de cada módulo
+        (não é necessário apresentar o código montado de cada módulo).
+
+        \item [(b)]
+        Personifique um ligador e combine os módulos em um único arquivo executável.
+        Somente é necessário apresentar o código ligado final indicando no código
+        os endereços absolutos e relativos e os fatores de correção.
+        O módulo A deve ir primeiro no código final, seguido de B e finalmente o C.
     \end{itemize}
 
     \item
@@ -140,4 +140,76 @@
         Mostre o código objeto após os módulos terem sido ligados.
     \end{itemize}
 
+    \item
+    Um programa em Assembly hipotético visto em sala de aula 
+    recebe três inteiros positivos distintos 
+    e realiza as seguintes operações sobre eles:
+    \begin{itemize}
+        \item [(i)] salva cada número numa label;
+        \item [(ii)] identifica o maior e o menor;
+        \item [(iii)] imprime na tela o menor, e depois o maior;
+        \item [(iv)] repete o processo se o usuário der enter, encerra se não.
+    \end{itemize}
+
+    \begin{itemize}
+        \item [(a)]
+        Elabore o programa em 2 módulos.
+        O módulo 1 deve fazer as tarefas (i) e (iv), 
+        e o 2, (ii) e (iii).
+        A seção de dados deve sempre ir ao final.
+
+        \item [(b)]
+        Mostre as tabelas de uso, símbolo
+        e definições de cada um dos módulos.
+
+        \item [(c)]
+        Ligue o programa, mostrando 
+        o código máquina do assembly inventado,
+        os fatores de correção 
+        e a tabela global de definições.
+        O código máquina deve ser mostrado 
+        seguindo o formato visto em aula.
+    \end{itemize}
+
+    \item
+    Faça um programa que receba números do usuário.
+    O primeiro número deve ser simplesmente salvo,
+    e depois somado com o segundo número.
+    O terceiro número será subtraído da soma precedente.
+    O quarto número será somado ao montante,
+    o quinto subtraído, e por aí vai, até ser atingida a condição de parada.
+    \begin{itemize}
+        \item
+        O programa deve ser escrito em 2 módulos, 
+        sempre com as diretivas \asm{SPACE} e \asm{CONST} ao final
+
+        \item
+        O primeiro módulo deve ler um número do usuário, que será a condição de parada.
+        Esse valor deve ser salvo numa variável chamada STOP1 dentro do módulo.
+        STOP2 deve guardar o oposto negativo desse valor.
+        Assuma que o usuário digitará sempre valores positivos.
+
+        \item
+        O segundo módulo deve fazer o laço
+        que pede ao usuário uma série de números,
+        realizando as operações intercaladas descritas no enunciado,
+        registrando a quantidade de somas e subtrações feitas.
+        Quando o montante for maior ou igual a STOP1, ou menor que STOP2,
+        o laço acaba, e o módulo deve pular para o primeiro.
+
+        \item
+        O primeiro módulo mostra a quantidade de somas/subtrações, e termina.
+    \end{itemize}
+
+    \begin{itemize}
+        \item [(a)]
+        Mostre o programa usando o Assembly inventado dos 2 módulos.
+
+        \item [(b)]
+        Mostre a tabela de símbolos, uso e definição de cada módulo.
+
+        \item [(c)]
+        Mostre o código de máquina ligado
+        (não precisa indicar absolutos e relativos).
+    \end{itemize}
 \end{enumerate}

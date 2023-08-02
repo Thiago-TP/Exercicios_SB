@@ -13,7 +13,9 @@
     Sobre a arquitetura x64, responda:
     \begin{itemize}
         \item [(a)]
-        O que significa um processador ser de arquitetura híbrida RISC/CISC?
+        O que é uma arquitetura LOAD-STORE e LOAD-OPERATE,
+        qual a relação com CISC e RISC,
+        e o que é um processador híbrido CISC/RISC?
 
         \item [(b)]
         Descreva como é feito o endereçamento de memória na arquitetura x64,
@@ -88,9 +90,14 @@
     \putNASM{enderecamentos.asm}
 
     \item
+    Mostre como está a pilha na linha \asm{80485d7} assumindo que a função recebe
+    um ponteiro de dword e o endereço de retorno é a linha \asm{80232e}.
+    \putDUMP{objdump_foo.asm}
+
+    \item
     Considere o seguinte fragmento de código IA-32 obtido pelo comando \asm{objdump}.
     Como pode ser visto, a função \asm{g()} é chamada pela função \asm{f()}.
-    \putC{objdump.asm}
+    \putDUMP{objdump_fg.asm}
 
     \begin{itemize}
         \item [(a)]

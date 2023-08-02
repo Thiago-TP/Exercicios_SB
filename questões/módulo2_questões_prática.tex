@@ -77,6 +77,15 @@
     \putC{soma.c}
 
     \item
+    Considere a função \asm{f1} abaixo, escrita em C.
+    Reescreva-a em Assembly IA-32, mantendo tipagem, 
+    usando os enderaçentos adequados,
+    enviando parâmetros locais pela pilha
+    e retorno por \asm{eax}.
+    Pode usar io.mac.
+    \putC{f1.c}  
+
+    \item
     Escreva o seguinte código em Assembly IA-32.
     Para isso é permitido o uso da bibiloteca io.mac
     para ler e escrever strings (PutStr, GetStr).
@@ -106,6 +115,30 @@
         para somente o dono do arquivo ler, ecrever e executar. 
         Nome do arquivo: `myfile2.txt' (na mesma pasta que o programa). 
         Escreve no arquivo o valor da soma.
+        Fecha o arquivo.
+    \end{enumerate}
+
+    \item
+    Faça um programa em Assembly IA-32 que:
+    \begin{enumerate}
+        \item [1.]
+        Abre um arquivo em modo leitura (00), 
+        com permissão para todos os usuários 
+        possam ler, escrever e executar. 
+        Nome do arquivo: `myfile1.txt' (na mesma pasta que o programa). 
+        Lê 100 valores de 16 bits do arquivo e os salva num array $x$. 
+        Fecha o arquivo.
+
+        \item [2.]
+        Verifica por meio de um laço se os valores lidos são positivos,
+        escrevendo 1 num array $y$ em caso afirmativo e 0 caso contrário.
+
+        \item [3.]
+        Abre um arquivo em modo escrita (01), com permissão
+        para somente o dono do arquivo ler, ecrever e executar,
+        enquanto outros possam apenas ler. 
+        Nome do arquivo: `myfile2.txt' (na mesma pasta que o programa). 
+        Escreve no arquivo o array $y$.
         Fecha o arquivo.
     \end{enumerate}
 
@@ -188,7 +221,8 @@
             Número positivo mais próximo a zero & & & & \\\hline
             Maior número normalizado & & & & \\\hline
             Menor número não-normalizado & & & & \\\hline
-            $4.0 + 3.0$ & & & & \\
+            $4.0 + 3.0$ & & & & \\\hline
+            $7.0 + 8.0$ & & & & \\
             \hline
         \end{tabular}
     \end{table}

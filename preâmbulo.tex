@@ -1,0 +1,76 @@
+% Pacotes padrões para lidar com palavras em português
+\usepackage[T1]{fontenc}    % https://ctan.org/pkg/fontenc?lang=en
+\usepackage[utf8]{inputenc} % https://ctan.org/pkg/inputenc?lang=en
+\usepackage[brazil]{babel}  % https://ctan.org/pkg/babel?lang=en
+
+% Borda uniforme de 2.5cm por todo o documento
+\usepackage[margin=2.5cm]{geometry} % https://ctan.org/pkg/geometry?lang=en
+
+% Decorações pela página
+\usepackage{fancyhdr} % https://ctan.org/pkg/fancyhdr?lang=en
+\usepackage{lastpage}
+    \pagestyle{fancy}
+    \renewcommand{\sectionmark}[1]{\markright{#1}}
+    \renewcommand{\chaptermark}[1]{%
+    \markboth{#1}{}}
+
+    \renewcommand{\headrule}{\rule{\textwidth}{.5pt}}
+
+    \fancyhead[L]{Módulo \thechapter\ -- \leftmark}
+    \fancyhead[C]{}
+    \fancyhead[R]{\rightmark}
+
+    \fancyfoot[L]{Sotfware Básico}
+    \fancyfoot[R]{\thepage\ de \pageref{LastPage}}
+
+    \renewcommand{\footrule}{\rule{\textwidth}{.5pt}}
+
+% Pacote para desenhos
+\usepackage{tikz} % https://ctan.org/pkg/pgf?lang=en
+
+% Pacoe para coluna dupla/tripla
+\usepackage{multicol}
+
+% Mudança da estética dos títulos de capítulo, seção, e a subseção
+\usepackage[scaled]{helvet} % https://ctan.org/pkg/helvet?lang=en
+\usepackage{titlesec}       % https://ctan.org/pkg/titlesec?lang=en
+    \titleformat{\chapter}
+    {\sffamily\huge\bfseries\color{cyan!60!black}}
+    {Módulo \thechapter\ --}{5pt}{}
+
+    \titleformat{\section}
+    {\normalfont\sffamily\LARGE\bfseries\color{cyan!50!black}}
+    {\thesection\ }{0pt}{}
+
+% Pacote enumitem permite colocar número da seção na enumeração, e introduz a opção resume.
+% https://tex.stackexchange.com/questions/1126/include-section-number-in-list-number
+% https://tex.stackexchange.com/questions/351638/continue-numbering-of-paragraphs-after-a-new-section
+\usepackage{enumitem} % https://ctan.org/pkg/enumitem?lang=en
+    \setlength{\parindent}{0em}
+    \setlist{noitemsep, leftmargin=0em}
+    \setenumerate[1]{label=\thesection.\arabic*.}
+    \setenumerate[2]{label*=\arabic*.}
+
+% Atalho para escrever uma linha de código.
+% Uso: \asm{linha de código}
+% Na linha, os símbolos _ devem ser reescritos como \_
+\newcommand{\asm}[1]{{\tt#1}}
+
+% Pacote para inserção de códigos
+\usepackage{minted} % https://ctan.org/pkg/minted?lang=en
+    \usemintedstyle{lovelace} % caso queira mudar o esquema de cores do código, troque por uma das opções em "pygmentize -L styles"
+    % Muda a cor, tamanho e fonte dos números que enumeram linhas de código
+    \renewcommand{\theFancyVerbLine}{\textcolor[rgb]{.5, .5, .5}{\tiny\arabic{FancyVerbLine}}}
+% Atalho para inserir código NASM, C e objdump no pdf.
+% Uso: \putNASM{nome do arquivo.asm}
+% O arquivo deve estar na pasta 'listings' !
+\definecolor{bg}{rgb}{0.97, 0.97, 0.97} % cor do fundo dos códigos
+\newcommand{\putNASM}[1]{
+    \inputminted[numbers=right, numbersep=1pt, bgcolor=bg]{nasm}{listings/#1}
+}
+\newcommand{\putC}[1]{
+    \inputminted[numbers=right, numbersep=1pt, bgcolor=bg]{C}{listings/#1}
+}
+\newcommand{\putDUMP}[1]{
+    \inputminted[numbers=right, numbersep=1pt, bgcolor=bg]{text}{listings/#1}
+}
