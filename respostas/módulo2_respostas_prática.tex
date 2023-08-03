@@ -12,9 +12,19 @@
         \item [(d)] \putC{respostas/foo4.c}
     \end{itemize}
 
+    \item 
+    \putNASM{respostas/f4_mul_elements.asm}
+
     \item
+    \putNASM{respostas/f4_mul_vectors.asm}
+
     \item
-    \item
+    Modificações necessárias no código C original:
+    além de eliminar a definição original da função,
+    deve também declarar a assinatura da \asm{soma} em Assembly por
+    \asm{extern void soma(int *M, int N, int *valor)}.
+    \putNASM{respostas/soma.asm}
+
     \item
     \item
     \item
