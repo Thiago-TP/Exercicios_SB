@@ -6,30 +6,48 @@
 % Borda uniforme de 2.5cm por todo o documento
 \usepackage[margin=2.5cm]{geometry} % https://ctan.org/pkg/geometry?lang=en
 
+% Pacote para frações "deitadinhas"
+\usepackage{xfrac}
+
 % Decorações pela página
 \usepackage{fancyhdr} % https://ctan.org/pkg/fancyhdr?lang=en
 \usepackage{lastpage}
     \pagestyle{fancy}
+
+    % \rightmark dá apenas o nome da seção:
+    % https://tex.stackexchange.com/questions/310260/retrieve-only-chapter-name-in-fancyhdr
     \renewcommand{\sectionmark}[1]{\markright{#1}}
+
+    % \leftmark dá apenas o nome do capítulo:
+    % https://tex.stackexchange.com/questions/310260/retrieve-only-chapter-name-in-fancyhdr
     \renewcommand{\chaptermark}[1]{%
     \markboth{#1}{}}
 
+    % linha fina entre as decorações no cabeçalho e o texto
     \renewcommand{\headrule}{\rule{\textwidth}{.5pt}}
 
-    \fancyhead[L]{Módulo \thechapter\ -- \leftmark}
-    \fancyhead[C]{}
-    \fancyhead[R]{\rightmark}
+    % Decorações no cabeçalho
+    \fancyhead[L]{Módulo \thechapter\ -- \leftmark} % à esquerda: "Módulo X - Nome do módulo"
+    \fancyhead[C]{}                                 % ao centro: nada
+    \fancyhead[R]{\rightmark}                       % à direita: "Nome da seção"
 
-    \fancyfoot[L]{Sotfware Básico}
-    \fancyfoot[R]{\thepage\ de \pageref{LastPage}}
+    % Decorações no rodapé
+    \fancyfoot[L]{Sotfware Básico}                  % à esquerda: "Software Básico"
+                                                    % ao centro: "Lista de Questões/Respostas", a ser definido no .tex referente
+    \fancyfoot[R]{pg. \thepage\ de \pageref{LastPage}}  % à direita: "X de Y"
 
+    % linha fina entre as decorações do rodapé e o texto
     \renewcommand{\footrule}{\rule{\textwidth}{.5pt}}
+
+% Pacote para colorir linhas de tabela
+% https://tex.stackexchange.com/questions/112671/define-and-use-new-colors-for-rowcolor-colortbl
+\usepackage[table]{xcolor} % https://ctan.org/pkg/xcolor?lang=en
 
 % Pacote para desenhos
 \usepackage{tikz} % https://ctan.org/pkg/pgf?lang=en
 
-% Pacoe para coluna dupla/tripla
-\usepackage{multicol}
+% Pacote para coluna dupla/tripla
+\usepackage{multicol} % https://ctan.org/pkg/multicol?lang=en
 
 % Mudança da estética dos títulos de capítulo, seção, e a subseção
 \usepackage[scaled]{helvet} % https://ctan.org/pkg/helvet?lang=en
@@ -58,19 +76,17 @@
 
 % Pacote para inserção de códigos
 \usepackage{minted} % https://ctan.org/pkg/minted?lang=en
-    \usemintedstyle{lovelace} % caso queira mudar o esquema de cores do código, troque por uma das opções em "pygmentize -L styles"
+    % Caso queira mudar o esquema de cores do código, troque por uma das opções em "pygmentize -L styles"
+    \usemintedstyle{lovelace} 
+    
     % Muda a cor, tamanho e fonte dos números que enumeram linhas de código
+    % https://tex.stackexchange.com/questions/132849/how-can-i-change-the-font-size-of-the-number-in-minted-environment
     \renewcommand{\theFancyVerbLine}{\textcolor[rgb]{.5, .5, .5}{\tiny\arabic{FancyVerbLine}}}
-% Atalho para inserir código NASM, C e objdump no pdf.
-% Uso: \putNASM{nome do arquivo.asm}
-% O arquivo deve estar na pasta 'listings' !
-\definecolor{bg}{rgb}{0.97, 0.97, 0.97} % cor do fundo dos códigos
-\newcommand{\putNASM}[1]{
-    \inputminted[numbers=right, numbersep=1pt, bgcolor=bg]{nasm}{listings/#1}
-}
-\newcommand{\putC}[1]{
-    \inputminted[numbers=right, numbersep=1pt, bgcolor=bg]{C}{listings/#1}
-}
-\newcommand{\putDUMP}[1]{
-    \inputminted[numbers=right, numbersep=1pt, bgcolor=bg]{text}{listings/#1}
-}
+
+    % Atalhos para inserir código NASM, C e objdump no pdf.
+    % Uso: \putNASM{nome do arquivo.asm}
+    % Coloque o arquivo deve estar na pasta "listings" !
+    \definecolor{bg}{rgb}{0.95, 0.95, 0.95} % cor do fundo dos códigos
+    \newcommand{\putNASM}[1]{\inputminted[numbers=right, numbersep=1pt, bgcolor=bg]{nasm}{listings/#1}}
+    \newcommand{\putC}[1]   {\inputminted[numbers=right, numbersep=1pt, bgcolor=bg]{C}{listings/#1}}
+    \newcommand{\putDUMP}[1]{\inputminted[numbers=right, numbersep=1pt, bgcolor=bg]{text}{listings/#1}}

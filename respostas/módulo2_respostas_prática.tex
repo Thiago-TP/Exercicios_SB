@@ -1,0 +1,144 @@
+\begin{enumerate}
+    \item
+    \putNASM{respostas/little_endian_complete.asm}
+
+    \item
+    
+    \item $\!$
+    \begin{itemize}
+        \item [(a)] \putC{respostas/foo1.c}
+        \item [(b)] \putC{respostas/foo2.c}
+        \item [(c)] \putC{respostas/foo3.c}
+        \item [(d)] \putC{respostas/foo4.c}
+    \end{itemize}
+
+    \item
+    \item
+    \item
+    \item
+    \item
+    \item
+    \item
+    \item
+
+    \item Bias $= 011 = 3$, Regra = {\color{red}\textit{ceil}}. 
+    \begin{table}[H]
+        \begin{tabular}{|l|l|l|l|l|}
+            \hline
+            \textbf{Descrição}  &
+            \textbf{Binário}    &
+            \textbf{Mantissa}   &
+            \textbf{Expoente}   &
+            \textbf{Valor decimal} \\\hline
+            Menos zero 
+            & 1 000 00 & $0.0$ & $-2$ & $-0.0$
+            \\\hline
+            Número positivo mais próximo a zero
+            & 0 000 01 & $\sfrac{1}{4}$ & $-2$ & $\sfrac{1}{4}\times 2^{-2}$
+            \\\hline
+            Infinito negativo
+            & 1 111 00 & -  & - & - 
+            \\\hline
+            Maior número normalizado
+            & 0 110 11 & $1\sfrac{3}{4}$ & $3$ & $1\sfrac{3}{4}\times 2^3$
+            \\\hline
+            Menor número não-normalizado
+            & 1 000 11 & $\sfrac{3}{4}$ & $-2$ & $-\sfrac{3}{4}\times 2^{-2}$
+            \\\hline\rowcolor{red!25}
+            $5.0 - 0.75 = 4.25$
+            & 0 101 01 & $1\sfrac{1}{4}$ & $2$ & $1\sfrac{1}{4}\times 2^2 = 5.0$
+            \\\hline
+            $4.0 + 3.0 = 7.0$
+            & 0 101 11 & $1\sfrac{3}{4}$ & $2$ & $1\sfrac{3}{4}\times 2^{2} = 7.0$
+            \\\hline
+        \end{tabular}
+    \end{table}
+
+    \item Bias $= 0111 = 7$, Regra = {\color{red}\textit{round}}
+    \begin{table}[H]
+        \begin{tabular}{|l|l|l|l|l|}
+            \hline
+            \textbf{Descrição}  &
+            \textbf{Binário}    &
+            \textbf{Mantissa}   &
+            \textbf{Expoente}   &
+            \textbf{Valor decimal} \\\hline
+            Menos zero
+            & 1 0000 00 & 0 & $-2$ & $-0.0$
+            \\\hline
+            Número positivo mais próximo a zero
+            & 0 0000 01 & $\sfrac{1}{4}$ & $-6$ & $\sfrac{1}{4}\times 2^{-6}$
+            \\\hline
+            Maior número normalizado
+            & 0 1110 11 & $1\sfrac{3}{4}$ & $7$ & $1\sfrac{3}{4}\times 2^7$
+            \\\hline
+            Menor número não-normalizado
+            & 1 0000 11 & $\sfrac{3}{4}$ & $-6$ & $-\sfrac{3}{4}\times 2^{-6}$
+            \\\hline
+            $4.0 + 3.0 = 7.0$
+            & 0 1001 11 & $1\sfrac{3}{4}$ & $2$ & $1\sfrac{3}{4}\times 2^2 = 7.0$
+            \\\hline\rowcolor{red!25}
+            $7.0 + 8.0 =  15.0$
+            & 0 1010 11 & $1\sfrac{3}{4}$ & $3$ & $1\sfrac{3}{4}\times 2^3 = 14.0$
+            \\\hline
+        \end{tabular}
+    \end{table}
+
+    \item Bias $= 0111 = 7$, Regra = {\color{red}fração mais próxima}.
+    \begin{table}[H]
+        \begin{tabular}{|l|l|l|l|l|}
+            \hline
+            \textbf{Número}  &
+            \textbf{Valor}    &
+            \textbf{Bit sinal}   &
+            \textbf{Bits expoente}   &
+            \textbf{Bits mantissa} \\\hline
+            Zero
+            & $0.0$ & 0 & 0000 & 0000
+            \\\hline
+            Negativo mais próximo a zero
+            & $-\sfrac{1}{16}\times 2^{-6}$ & 1 & 0000 & 0001
+            \\\hline
+            Maior positivo
+            & $1\sfrac{15}{16}\times 2^7$ & 0 & 1110 & 1111
+            \\\hline
+            n/a & $-5.0$
+            & 1 & 1001 & 0100
+            \\\hline
+            n/a & $1\sfrac{9}{16}\times2^{-2}$ 
+            & 0 & 0101 & 1001
+            \\\hline
+            Menos um & $-1.0$
+            & 1 & 0111 & 0000
+            \\\hline\rowcolor{red!25}
+            $4-1\frac{9}{16} = \sfrac{39}{16} = 2.4375$
+            & $\sfrac{40}{16} = 2.5$ & 0 & 1000 & 0100 
+            \\\hline
+        \end{tabular}
+    \end{table}
+
+    \item Bias $= 01111 = 15$, Regra = {\color{red}par mais próximo}.
+    \begin{table}[H]
+        \begin{tabular}{|l|l|l|l|l|}
+            \hline
+            \textbf{Descrição}  &
+            \textbf{Binário}    &
+            \textbf{Mantissa}   &
+            \textbf{Expoente}   &
+            \textbf{Valor decimal} \\\hline
+            Número negativo mais próximo a zero
+            & 1 00000 0001 & $\sfrac{1}{16}$ & $-14$ & $-\sfrac{1}{16}\times 2^{-14}$
+            \\\hline
+            Maior número
+            & 0 11110 1111 & $1\sfrac{15}{16}$ & $15$ & $1\sfrac{15}{16}\times 2^{15}$
+            \\\hline
+            Menor número não-normalizado
+            & 1 00000 1111 & $\sfrac{15}{16}$ & $-14$ & $\sfrac{15}{16}\times 2^{-14}$
+            \\\hline
+            Menos um
+            & 1 01111 0000 & $1.0$ & $0$ & $-1.0$
+            \\\hline
+        \end{tabular}
+    \end{table}
+
+\end{enumerate}
