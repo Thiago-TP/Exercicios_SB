@@ -2,7 +2,14 @@
     \item
     \putNASM{respostas/little_endian_complete.asm}
 
-    \item
+    \item $\!$
+    \begin{itemize}
+        \item [(a)] \putNASM{respostas/vector_size_MAX.asm}
+        \item [(b)] \putNASM{respostas/matrix_matching.asm}
+        \item [(c)] \putNASM{respostas/vetor_SIZE.asm}
+        \item [(d)] \putNASM{respostas/100x100_matrix.asm}
+        \item [(e)] \putNASM{respostas/weird_sum.asm}
+    \end{itemize}
     
     \item $\!$
     \begin{itemize}
@@ -26,10 +33,23 @@
     \putNASM{respostas/soma.asm}
 
     \item
+    \putNASM{respostas/f1.asm}
+
     \item
+    \putNASM{respostas/files.asm}
+
     \item
+    \putNASM{respostas/files_sum.asm}
+
     \item
+    Note que os arrays/buffers $x$ e $y$ têm 200 bytes de conteúdo, e não 100.
+    \putNASM{respostas/files_0s_and_1s.asm}
     \item
+    O programa a seguir multiplica matrizes
+    de tamanhos arbitrários e compatíveis.
+    O procedimento auxiliar \asm{GetMat}
+    realiza os laços de preenchimento das matrizes.
+    \putNASM{respostas/mul_mat_5x5.asm}
 
     \item Bias $= 011 = 3$, Regra = {\color{red}\textit{ceil}}. 
     \begin{table}[H]
@@ -121,7 +141,7 @@
             Menos um & $-1.0$
             & 1 & 0111 & 0000
             \\\hline\rowcolor{red!25}
-            $4-1\frac{9}{16} = \sfrac{39}{16} = 2.4375$
+            $4 - 1\sfrac{9}{16} = \sfrac{39}{16} = 2.4375$
             & $\sfrac{40}{16} = 2.5$ & 0 & 1000 & 0100 
             \\\hline
         \end{tabular}
