@@ -1,4 +1,4 @@
-Código (fator=0)           Tabela de Símbolos      Código Máquina
+Código (fator=0)            Tabela de Símbolos      Código Máquina
 00. MOD1:   BEGIN           MOD1:   00              
 00. MOD2:   EXTERN          MOD2:   00
 00. VALS:   EXTERN          VALS:   00
@@ -11,6 +11,6 @@ Código (fator=0)           Tabela de Símbolos      Código Máquina
 08.     DIV     VALS + 1    VALS:   1+ 3+ 7+ 9+     04  VALS + 1
 10.     STORE   RES                                 11  RES
 12.     OUTPUT  RES         Tabela de Definições    13  RES
-14. L2: STOP                _L1:    06              14
-15. R:  SPACE               _L2:    14              00
+14. L2: STOP                L1:     06              14
+15. R:  SPACE               L2:     14              00
     END                     R:      15
