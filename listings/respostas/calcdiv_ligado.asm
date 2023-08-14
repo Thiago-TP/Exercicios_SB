@@ -1,4 +1,4 @@
-    Código não ligado   Tabela Global           Código Máquina
+Códigos não ligados     Tabela Global           Código Máquina
 00. 12  VALS            L1:     06              12  22
 02. 12  VALS + 1        L2:     14              12  23
 04. 05  MOD2            RES:    15              05  16  
