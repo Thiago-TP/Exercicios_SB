@@ -1,7 +1,7 @@
 Códigos não ligados     Tabela Global           Código Máquina
-00. 12  VALS            L1:     06              12  22
-02. 12  VALS + 1        L2:     14              12  23
-04. 05  MOD2            RES:    15              05  16  
+00. 12  VALS            L1:     06+  0 = 06     12  22
+02. 12  VALS + 1        L2:     14+  0 = 14     12  23
+04. 05  MOD2            RES:    15+  0 = 15     05  16  
 06. 10  VALS            MOD2:   00+ 16 = 16     10  22
 08. 04  VALS + 1        VALS:   06+ 16 = 22     04  23
 10. 11  RES                                     11  15

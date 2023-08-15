@@ -2,8 +2,8 @@ Código (fator=0)            Tabela de Símbolos      Código Máquina
 00. MOD1:   BEGIN           MOD1:   00              
 00. MOD2:   EXTERN          MOD2:   00
 00. VALS:   EXTERN          VALS:   00
-00. PUBLIC  _L1             L1:     06
-00. PUBLIC  _L2             L2:     14
+00. PUBLIC  L1              L1:     06
+00. PUBLIC  L2              L2:     14
 00.     INPUT   VALS        R:      15              12  VALS
 02.     INPUT   VALS + 1                            12  VALS + 1
 04.     JMP     MOD2        Tabela de Usos          05  MOD2
