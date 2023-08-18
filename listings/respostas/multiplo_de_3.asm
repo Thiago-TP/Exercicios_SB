@@ -4,7 +4,7 @@ Código                      Tabela de Símbolos+Lista    Código Máquina
 04.     DIV     TRES        N:      19  01 03 09        04  TRES 
 06.     MUL     TRES        TRES:   20  05 07           03  TRES
 08.     SUB     &N          UM:     21  17              02  N
-10.     JMPZ    PRINT1      ZERO:   22  13              08  PRINT1                              
+10.     JMPZ    PRINT1      ZERO:   22  13              08  PRINT1
     END_MACRO
 00.         INPUT   N                                   12  N 
 02.         EH_MUL  N                                   ; escrito acima
